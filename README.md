@@ -30,4 +30,7 @@ https://www.youtube.com/watch?v=TOUzzTcH6O4
 
 https://www.youtube.com/watch?v=VyiOopl7Tj8 
 
+Rice Business:
+https://www.bakerinstitute.org/research/improving-small-business-lending-blockchain-technology
+
 
