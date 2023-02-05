@@ -58,13 +58,79 @@ La configuracion inicial de la wallet es muy sencilla, solo requiere configurar 
 <img src="https://i.ibb.co/QjP0Xcs/Screenshot-20230205-021115.png" width="30%">
 <img src="https://i.ibb.co/941QpnH/Screenshot-20230205-021140.png" width="30%">
 
-La parte mas importante de nuestra app es la seccion de lending, ya que con esta seccion podremos generar nuestro contrato y subir nuestros archivos mediante [Lighthouse](#) para poder recibir un prestamo.
+La parte mas importante de nuestra app es la seccion de lending, ya que con esta seccion podremos generar nuestro contrato y subir nuestros archivos mediante [Lighthouse](#lighthouse) para poder recibir un prestamo y el contrato que desplegamos para realizar un prestamo es [SMB-Contract](./Contracts/SMB-Contract.sol)
+
+NOTA: el contrato desplegado tiene algunos atributos de una [Abstraction Wallet](https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a), ya que siempre el contrato va a tener los fondos y cualquier movimiento de dinero debe ser echo por el cliente o por el owner.
 
 <img src="https://i.ibb.co/bWb1p0X/Screenshot-20230205-023324.png" width="30%">
 <img src="https://i.ibb.co/Jn6m20d/Screenshot-20230205-023349.png" width="30%">
 <img src="https://i.ibb.co/7Nybv8v/Screenshot-20230205-023410.png" width="30%">
 
 # SMB Lending Web App:
+
+Nuestra plataforma web nos permite que el dueño de la empresa de prestamos, pueda revisar y manejar los contratos segun se considere. Todos los contratos y registro de los mismos estan en el smart contract [SMB Register](./Contracts/SMB-Register.sol).
+
+<img src="https://i.ibb.co/dgzrpmz/image.png">
+
+## Risk:
+
+Para hacer el calculo del riesgo de invertir en una empresa, lo cual es indispensable para saber si se hara o no el prestamo, sera el siguiente.
+
+    calculateRisk(id, enterprise, balance, year = 0) {
+            let number = 
+              100 - 20 * id   // Check if the ID is available
+            - 20 * enterprise // Check if the Enterprise Document is available
+            - 30 * (balance > 100 ? 1 : balance / 100) // Check Client Collateral
+            - 30 * (year >= 3 ? 1 : year / 3)// Check incorporation date
+            return number
+        }
+
+<img src="https://i.ibb.co/h7T2p1M/image.png">
+
+Este algoritmo no se limita a funcionar con solo estos datos, puede complicarse tanto como se requiera.
+
+## Pending Contracts:
+
+En el caso de los contratos pendientes, podremos ver la siguiente informacion.
+
+<img src="https://i.ibb.co/h7T2p1M/image.png">
+
+- Address: El address de la wallet que esta haciendo la peticion del prestamo
+- Contract: El contrato al cual se mandara el prestamo
+- Amount: La cantidad en USDC que pide el usuario
+- USDC Collateral: El colateral de dinero que dara el cliente como "seguro" al prestamo
+- Documents: los documentos empresariales que se piden para evitar el fraude.
+- Years: la cantidad de años que tiene la empresa
+- IR: el porcentaje de interes que se pedira por el prestamo segun el riesgo.
+- Risk: el porcentaje de riesgo de realizar la inversion a esa empresa.
+- Contract Control: Con estos botones se acepta o se rechaza la peticion de prestamo.
+
+Todos las interacciones con el smart contract deben de ser firmadas mediante metamask con la wallet del dueño de la empresa.
+
+<img src="https://i.ibb.co/hfybXgH/image.png">
+
+## Active Contracts:
+
+En el caso de los contratos activos podremos ver casi la misma informacion, sin embargo ya podremo ver el saldo que tiene en todo momento el contrato, el colteral del cliente y el dinero que pidio prestado en un inicio.
+
+<img src="https://i.ibb.co/M7TGF1Y/image.png">
+
+- USDC Amount: La cantidad en USDC que pidio el usuario al inicio.
+- USDC Collateral: El colateral de dinero que dara el cliente como "seguro" al prestamo.
+- USDC Contract: el balance de USDC que tiene el contrato en este momento.
+- Contract Control: Con el boton de completar, podremos recuperar nuestra inversion una vez el contrato tenga el equivalente al dinero prestado + el interes.
+
+## Rejected Contracts:
+
+Para los contratos que parecian ser un riesgo muy grande, el owner puede simplemente rechazarlos y dejaros como historico.
+
+<img src="https://i.ibb.co/9NDfS6W/image.png">
+
+## Completed Contracts:
+
+Por ultimo el owner puede ver los contratos que ya estan completos y cual fue la ganancia de relizar ese prestamo.
+
+<img src="https://i.ibb.co/WxtvJNM/image.png">
 
 # Spheron:
 
