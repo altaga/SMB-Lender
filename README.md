@@ -48,23 +48,17 @@ SMB lender es una plataforma integral de prestamos sobre la FEVM totalmente on C
 
 Para que un cliente pueda hacer uso de nuestros servicios de lending, primero debera bajar nuestra aplicacion SMB Wallet, la cual es una wallet 100% funcional basada completamente en la red Filecoin EVM y lista para funcionar con los ERC20 tokens que vaya a tener la red e su lanzamiento, todos los valores de las tokens se obtienen en tiempo real desde la API de CoinGecko.
 
-<img src="https://i.ibb.co/YPbDYpP/image.png" width="30%">
-<img src="https://i.ibb.co/JBNFHVt/image.png" width="30%">
-<img src="https://i.ibb.co/Jc32DpQ/image.png" width="30%">
+<img src="https://i.ibb.co/YPbDYpP/image.png" width="30%"> <img src="https://i.ibb.co/JBNFHVt/image.png" width="30%"> <img src="https://i.ibb.co/Jc32DpQ/image.png" width="30%">
 
 La configuracion inicial de la wallet es muy sencilla, solo requiere configurar un PIN y relizar la creacion del mnemonico de la wallet.
 
-<img src="https://i.ibb.co/1YCsyY3/Screenshot-20230205-021058.png" width="30%">
-<img src="https://i.ibb.co/QjP0Xcs/Screenshot-20230205-021115.png" width="30%">
-<img src="https://i.ibb.co/941QpnH/Screenshot-20230205-021140.png" width="30%">
+<img src="https://i.ibb.co/1YCsyY3/Screenshot-20230205-021058.png" width="30%"> <img src="https://i.ibb.co/QjP0Xcs/Screenshot-20230205-021115.png" width="30%"> <img src="https://i.ibb.co/941QpnH/Screenshot-20230205-021140.png" width="30%">
 
 La parte mas importante de nuestra app es la seccion de lending, ya que con esta seccion podremos generar nuestro contrato y subir nuestros archivos mediante [Lighthouse](#lighthouse) para poder recibir un prestamo y el contrato que desplegamos para realizar un prestamo es [SMB-Contract](./Contracts/SMB-Contract.sol)
 
 NOTA: el contrato desplegado tiene algunos atributos de una [Abstraction Wallet](https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a), ya que siempre el contrato va a tener los fondos y cualquier movimiento de dinero debe ser echo por el cliente o por el owner.
 
-<img src="https://i.ibb.co/bWb1p0X/Screenshot-20230205-023324.png" width="30%">
-<img src="https://i.ibb.co/Jn6m20d/Screenshot-20230205-023349.png" width="30%">
-<img src="https://i.ibb.co/7Nybv8v/Screenshot-20230205-023410.png" width="30%">
+<img src="https://i.ibb.co/bWb1p0X/Screenshot-20230205-023324.png" width="30%"> <img src="https://i.ibb.co/Jn6m20d/Screenshot-20230205-023349.png" width="30%"> <img src="https://i.ibb.co/7Nybv8v/Screenshot-20230205-023410.png" width="30%">
 
 # SMB Lending Web App:
 
