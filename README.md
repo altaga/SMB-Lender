@@ -48,6 +48,11 @@ SMB lender es una plataforma integral de prestamos sobre la FEVM totalmente on C
 
 Para que un cliente pueda hacer uso de nuestros servicios de lending, primero debera bajar nuestra aplicacion SMB Wallet, la cual es una wallet 100% funcional basada completamente en la red Filecoin EVM y lista para funcionar con los ERC20 tokens que vaya a tener la red e su lanzamiento, todos los valores de las tokens se obtienen en tiempo real desde la API de CoinGecko.
 
+NOTA: ya que Filecoin EVM no tiene una lista de ERC20 ya reconocida, nosotros generamos dos tokens de prueba para mostrar la completa fnucionalidad de la red con tokens.
+
+SMB Token Address: 0x53d3b22E7548C2088785D0A87F1174d3818AB90b
+USDC (test) Token: 0xc1908C35eF76b7642e20e650EC9274Ab5FA68c84
+
 <img src="https://i.ibb.co/YPbDYpP/image.png" width="30%"> <img src="https://i.ibb.co/JBNFHVt/image.png" width="30%"> <img src="https://i.ibb.co/Jc32DpQ/image.png" width="30%">
 
 La configuracion inicial de la wallet es muy sencilla, solo requiere configurar un PIN y relizar la creacion del mnemonico de la wallet.
