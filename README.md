@@ -26,11 +26,11 @@ Lighthouse Services: [Click Here](#lighthouse)
 
 [![Demo](https://i.ibb.co/g4W3ypx/image.png)](pending)
 
-# Introduction and Problem
+# Introduction and Problem:
 
 
 
-# Solution
+# Solution:
 
 SMB lender es una plataforma integral de prestamos sobre la FEVM totalmente on Chain. Contamos con nuestra propia wallet FEVM como aplicacion nativa de android, compatible con todas las operaciones de Filecoin y ERC20 tokens, ademas de la gestion de los prestamos solicitados a travez del control del smart contract afiliado a esta wallet, ademas de la capacidad de compartir los archivos del KYC mediante lighthouse y poder facilitar al prestamista la aprovacion del prestamo. Ademas una plataforma web para el prestamista, desplegada con Sphereon y donde puede gestionar los smart contracts de el dinero prestado y ganancias del negocio.
 
@@ -134,13 +134,86 @@ Por ultimo el owner puede ver los contratos que ya estan completos y cual fue la
 
 # Spheron:
 
+Todo el despliegue de nuestra aplicacion, ciclo de CI/CD y sobre todo el hosting, esta proporcionado por Spheron.
+
+## Deployment:
+
+El despliegue de nuestra aplicacion se realizo con su sistema de build and deploy, con el Framework de ReactJS en la version NodeV16. La ventaja de usar este sistema es que cada vez que realizamos un push a nuestro repositorio, la plataforma despliega los cambios al instante.
+
+<img src="https://i.ibb.co/H7HG7GN/image.png">
+
+## Hosting: 
+
+Una parte importante de nuestro proyecto era tener nuestra propio dominio, asi que se realizo la compra de un dominio en godaddy y se configuro en nuestra aplicacion para configurar los DNS hacia ella.
+
+<img src="https://i.ibb.co/H4fGRgr/image.png">
+
+A su vez la aplicacion para subir archivos mediante Lighthouse esta tambien hosteada como subdominio de esta pagina.
+
+<img src="https://i.ibb.co/sWc28j1/image.png">
+
 # Lighthouse: 
 
-# Current state and what's next
+## Mobile:
 
-# Team
+Para poder subir los archivos a Lighthouse se utilizo el [@lighthouse-web3/sdk](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/overview) integrando en una PWA en para mobiles para que durante la etapa de creacion del [SMB Contract](/Contracts/SMB-Contract.sol) los archivos pudieran ser subidos directo al contrato como CID's.
 
-#### 3 Engineers with experience developing IoT and hardware solutions. We have been working together now for 5 years since University.
+<img src="https://i.ibb.co/7Nybv8v/Screenshot-20230205-023410.png" width="30%">
+
+Esta implementacion esta en el siguiente archivo de la pagina web.
+
+- [Upload Files](/Upload%20File%20Platform%20Code/src/lighthouse/lighthouse.js)
+
+      async deploy(e, index) {
+          console.log(e)
+          let output;
+          if (index === 0) {
+              output = await lighthouse.upload(e, "XXXXXXXXXXXXXXXXXXXXXXX", this.progressCallback1);
+          }
+          else if (index === 1) {
+              output = await lighthouse.upload(e, "XXXXXXXXXXXXXXXXXXXXXXX", this.progressCallback2);
+          }
+          else if (index === 2) {
+              output = await lighthouse.upload(e, "XXXXXXXXXXXXXXXXXXXXXXX", this.progressCallback3);
+          }
+          let cid = this.state.cid 
+          cid[index] = output.data.Hash
+          let percentagesDone = this.state.percentagesDone
+          percentagesDone[index] = 100
+          console.log(cid)
+          this.setState({
+              cid,
+              percentagesDone
+          })
+      }
+
+## Webapp:
+
+Estos archivos pueden ser concultados tambien por la pagina web usando el Gateway proporcionado por Lighthouse.
+
+Esta implementacion esta en el siguiente archivo de la pagina web.
+
+- [Active Tab](Lending%20Platform%20Code/src/menu/active.js)
+- [Pending Tab](Lending%20Platform%20Code/src/menu/pending.js)
+- [Rejected Tab](Lending%20Platform%20Code/src/menu/rejected.js)
+- [Completed Tab](Lending%20Platform%20Code/src/menu/completed.js)
+
+      function getLinks(cids) {
+          const links = {
+              id: 'https://gateway.lighthouse.storage/ipfs/' + cids[0],
+              enterprise: 'https://gateway.lighthouse.storage/ipfs/' + cids[1],
+              logo: 'https://gateway.lighthouse.storage/ipfs/' + cids[2],
+          }
+          return links
+      }
+
+# Current state and what's next:
+
+TO DO...
+
+# Team:
+
+#### 3 Engineers with experience developing Blockchain, IoT, AI and hardware solutions. We have been working together now for 5 years since University.
 
 [<img src="https://img.shields.io/badge/Luis%20Eduardo-Arevalo%20Oliver-blue">](https://www.linkedin.com/in/luis-eduardo-arevalo-oliver-989703122/)
 
@@ -148,7 +221,7 @@ Por ultimo el owner puede ver los contratos que ya estan completos y cual fue la
 
 [<img src="https://img.shields.io/badge/Alejandro-Sanchez%20Gutierrez-red">](https://www.linkedin.com/in/victor-alonso-altamirano-izquierdo-311437137/)
  
-# References
+# References:
 
 - Konfio - https://konfio.mx/mi/registro/
 
