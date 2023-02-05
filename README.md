@@ -153,6 +153,8 @@ A su vez la aplicacion para subir archivos mediante Lighthouse esta tambien host
 
 # Lighthouse: 
 
+<img src="https://i.ibb.co/f47fhVX/image.png">
+
 ## Mobile:
 
 Para poder subir los archivos a Lighthouse se utilizo el [@lighthouse-web3/sdk](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/overview) integrando en una PWA en para mobiles para que durante la etapa de creacion del [SMB Contract](/Contracts/SMB-Contract.sol) los archivos pudieran ser subidos directo al contrato como CID's.
