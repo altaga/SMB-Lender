@@ -157,7 +157,7 @@ A su vez la aplicacion para subir archivos mediante Lighthouse esta tambien host
 
 ## Mobile:
 
-Para poder subir los archivos a Lighthouse se utilizo el [@lighthouse-web3/sdk](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/overview) integrando en una PWA en para mobiles para que durante la etapa de creacion del [SMB Contract](/Contracts/SMB-Contract.sol) los archivos pudieran ser subidos directo al contrato como CID's.
+In order to upload the files to Lighthouse, the [@lighthouse-web3/sdk](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/overview) was used, integrating into a PWA for mobiles so that during the stage of creation of the [SMB Contract](/Contracts/SMB-Contract.sol) the files could be uploaded directly to the contract as CID's.
 
 URL: https://light.smb-lending.services/
 
