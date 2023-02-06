@@ -133,7 +133,7 @@ Por ultimo el owner puede ver los contratos que ya estan completos y cual fue la
 
 # Spheron:
 
-Todo el despliegue de nuestra aplicacion, ciclo de CI/CD y sobre todo el hosting, esta proporcionado por Spheron.
+All the deployment of our application, CI/CD cycle and above all the hosting, is provided by Spheron.
 
 ## Deployment:
 
