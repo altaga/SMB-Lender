@@ -1,5 +1,5 @@
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) [<img src="https://img.shields.io/badge/View-Video-red">](pending)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) [<img src="https://img.shields.io/badge/View-Video-red">](https://youtu.be/1vXEH298I8A)
 
 # SMB Lender
 <img src="https://i.ibb.co/nfLMcJC/smb.png" width="60%">
@@ -24,56 +24,64 @@ Lighthouse Services: [Click Here](#lighthouse)
 
 ## Here is our main demo video: 
 
-[![Demo](https://i.ibb.co/g4W3ypx/image.png)](pending)
+[![Demo](https://i.ibb.co/g4W3ypx/image.png)](https://youtu.be/1vXEH298I8A)
 
 # Introduction and Problem:
+
+Entrepreneurs and business owners in the United States face many obstacles securing capital to start, operate, and grow their small businesses. As forced shutdowns, limited capacities, and stricter regulations continue to place strain on businesses, business owners are seeking financial assistance at greater rates; however, even during times of economic prosperity, acquiring capital for a business has been fraught with complications. The emerging use of blockchain technology in financial services has the potential to transform small business lending and improve capital access for businesses excluded by conventional lending processes.
+
+The main problem is, of course, Access to capital.
+ Most small businesses do not have the financial resources necessary to thrive or, in some cases, survive without borrowing. Small business loans provide some assistance, but current programs have considerable room to improve. In 2019, only 51% of small businesses reported receiving their requested loan amount while one in 10 received no funding at all.
+The COVID-19 pandemic created a staggering need for financial assistance for businesses, leading to the PPP loans of march  2020. Its goal was to provide aid to small businesses. However, the PPP also served to highlight the cracks in the small business loan system. Some banks prioritized existing customers, and others did not accept applications unless the business had a checking account, a credit card, and a previous loan with that institution. Fraud was also a problem within this system.
+
+Blockchain technology is the key to facilitate the application and loan process and avoid fraud. Since all the activities on a blockchain platform are visible, SBA lenders can decide credit worthiness without an extensive application process and using visible collaterals. Of course the application process and validation is important, but this can be semi-automated and have a base in a smart contract instead of trust on third parties. 
 
 
 
 # Solution:
 
-SMB lender es una plataforma integral de prestamos sobre la FEVM totalmente on Chain. Contamos con nuestra propia wallet FEVM como aplicacion nativa de android, compatible con todas las operaciones de Filecoin y ERC20 tokens, ademas de la gestion de los prestamos solicitados a travez del control del smart contract afiliado a esta wallet, ademas de la capacidad de compartir los archivos del KYC mediante lighthouse y poder facilitar al prestamista la aprovacion del prestamo. Ademas una plataforma web para el prestamista, desplegada con Sphereon y donde puede gestionar los smart contracts de el dinero prestado y ganancias del negocio.
+SMB lender is an integral platform for loans on the FEVM totally on Chain. We have our own FEVM wallet as a native Android application, compatible with all Filecoin and ERC20 token operations, in addition to the management of the requested loans through the control of the smart contract affiliated with this wallet, in addition to the ability to share the KYC files through lighthouse and be able to facilitate the loan approval for the lender. In addition, a web platform for the lender, deployed with Sphereon and where you can manage the smart contracts of the borrowed money and business profits.
 
 # System's Architecture:
 
 <img src="https://i.ibb.co/47ndFtL/scheme.png">
 
-- Filecoin EVM: Todas las transacciones, assets y smart contracts estan sobre la Hyperspace Filecoin EVM.
+- Filecoin EVM: All transactions, assets and smart contracts are on the Hyperspace Filecoin EVM.
   
-- Spheron: en esta plataforma tenemos toda la gestion del despliegue y hosting de nuestro sitio web.
+- Spheron: on this platform we have all the management of the deployment and hosting of our website.
   
-- Lighthouse: con este servicio de web3 realizamos la gestion y subida de archivos a la red de IPFS.
+- Lighthouse: with this web3 service we manage and upload files to the IPFS network.
 
 # SMB React Natve App:
 
-Para que un cliente pueda hacer uso de nuestros servicios de lending, primero debera bajar nuestra aplicacion SMB Wallet, la cual es una wallet 100% funcional basada completamente en la red Filecoin EVM y lista para funcionar con los ERC20 tokens que vaya a tener la red e su lanzamiento, todos los valores de las tokens se obtienen en tiempo real desde la API de CoinGecko.
+In order for a client to make use of our lending services, they must first download our SMB Wallet application, which is a 100% functional wallet based entirely on the Filecoin EVM network and ready to work with the ERC20 tokens that the network will have at launch All token values are retrieved in real time from the CoinGecko API.
 
-NOTA: ya que Filecoin EVM no tiene una lista de ERC20 ya reconocida, nosotros generamos dos tokens de prueba para mostrar la completa fnucionalidad de la red con tokens.
+NOTE: Since Filecoin EVM does not have an already recognized ERC20 list, we generated two test tokens to show the full functionality of the tokenized network.
 
 SMB Token Address: 0x53d3b22E7548C2088785D0A87F1174d3818AB90b
 USDC (test) Token: 0xc1908C35eF76b7642e20e650EC9274Ab5FA68c84
 
 <img src="https://i.ibb.co/YPbDYpP/image.png" width="30%"> <img src="https://i.ibb.co/JBNFHVt/image.png" width="30%"> <img src="https://i.ibb.co/Jc32DpQ/image.png" width="30%">
 
-La configuracion inicial de la wallet es muy sencilla, solo requiere configurar un PIN y relizar la creacion del mnemonico de la wallet.
+The initial configuration of the wallet is very simple, it only requires setting a PIN and creating the wallet mnemonic.
 
 <img src="https://i.ibb.co/1YCsyY3/Screenshot-20230205-021058.png" width="30%"> <img src="https://i.ibb.co/QjP0Xcs/Screenshot-20230205-021115.png" width="30%"> <img src="https://i.ibb.co/941QpnH/Screenshot-20230205-021140.png" width="30%">
 
-La parte mas importante de nuestra app es la seccion de lending, ya que con esta seccion podremos generar nuestro contrato y subir nuestros archivos mediante [Lighthouse](#lighthouse) para poder recibir un prestamo y el contrato que desplegamos para realizar un prestamo es [SMB-Contract](./Contracts/SMB-Contract.sol)
+The most important part of our app is the lending section, since with this section we can generate our contract and upload our files through [Lighthouse](#lighthouse) in order to receive a loan and the contract that we display to make a loan is [SMB-Contract](./Contracts/SMB-Contract.sol)
 
-NOTA: el contrato desplegado tiene algunos atributos de una [Abstraction Wallet](https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a), ya que siempre el contrato va a tener los fondos y cualquier movimiento de dinero debe ser echo por el cliente o por el owner.
+NOTE: the deployed contract has some attributes of an [Abstraction Wallet](https://medium.com/infinitism/erc-4337-account-abstraction-without-ethereum-protocol-changes-d75c9d94dc4a), since the contract will always have the funds and any movement of money must be made by the client or by the owner.
 
 <img src="https://i.ibb.co/bWb1p0X/Screenshot-20230205-023324.png" width="30%"> <img src="https://i.ibb.co/Jn6m20d/Screenshot-20230205-023349.png" width="30%"> <img src="https://i.ibb.co/7Nybv8v/Screenshot-20230205-023410.png" width="30%">
 
 # SMB Lending Web App:
 
-Nuestra plataforma web nos permite que el dueño de la empresa de prestamos, pueda revisar y manejar los contratos segun se considere. Todos los contratos y registro de los mismos estan en el smart contract [SMB Register](./Contracts/SMB-Register.sol).
+Our web platform allows the owner of the loan company to review and manage the contracts as deemed necessary. All contracts and their registration are in the smart contract [SMB Register](./Contracts/SMB-Register.sol).
 
 <img src="https://i.ibb.co/dgzrpmz/image.png">
 
 ## Risk:
 
-Para hacer el calculo del riesgo de invertir en una empresa, lo cual es indispensable para saber si se hara o no el prestamo, sera el siguiente.
+To calculate the risk of investing in a company, which is essential to know if the loan will be made or not, it will be the following.
 
     calculateRisk(id, enterprise, balance, year = 0) {
             let number = 
@@ -86,48 +94,48 @@ Para hacer el calculo del riesgo de invertir en una empresa, lo cual es indispen
 
 <img src="https://i.ibb.co/h7T2p1M/image.png">
 
-Este algoritmo no se limita a funcionar con solo estos datos, puede complicarse tanto como se requiera.
+This algorithm is not limited to working with only this data, it can be as complicated as required.
 
 ## Pending Contracts:
 
-En el caso de los contratos pendientes, podremos ver la siguiente informacion.
+In the case of pending contracts, we can see the following information.
 
 <img src="https://i.ibb.co/h7T2p1M/image.png">
 
-- Address: El address de la wallet que esta haciendo la peticion del prestamo
-- Contract: El contrato al cual se mandara el prestamo
-- Amount: La cantidad en USDC que pide el usuario
-- USDC Collateral: El colateral de dinero que dara el cliente como "seguro" al prestamo
-- Documents: los documentos empresariales que se piden para evitar el fraude.
-- Years: la cantidad de años que tiene la empresa
-- IR: el porcentaje de interes que se pedira por el prestamo segun el riesgo.
-- Risk: el porcentaje de riesgo de realizar la inversion a esa empresa.
-- Contract Control: Con estos botones se acepta o se rechaza la peticion de prestamo.
+- Address: The address of the wallet that is making the loan request
+- Contract: The contract to which the loan will be sent
+- Amount: The amount in USDC that the user requests
+- USDC Collateral: The collateral "money" that the client will give as "insurance" to the loan
+- Documents: business documents required to prevent fraud.
+- Years: the number of years the company is
+- IR: the percentage of interest that will be requested for the loan according to the risk.
+- Risk: the percentage of risk of making the investment to that company.
+- Contract Control: With these buttons the loan request is accepted or rejected.
 
-Todos las interacciones con el smart contract deben de ser firmadas mediante metamask con la wallet del dueño de la empresa.
+All interactions with the smart contract must be signed through metamask with the wallet of the owner of the company.
 
 <img src="https://i.ibb.co/hfybXgH/image.png">
 
 ## Active Contracts:
 
-En el caso de los contratos activos podremos ver casi la misma informacion, sin embargo ya podremo ver el saldo que tiene en todo momento el contrato, el colteral del cliente y el dinero que pidio prestado en un inicio.
+In the case of active contracts we will be able to see almost the same information, however we will already be able to see the balance that the contract has at all times, the client's collateral and the money that he borrowed at the beginning.
 
 <img src="https://i.ibb.co/M7TGF1Y/image.png">
 
-- USDC Amount: La cantidad en USDC que pidio el usuario al inicio.
-- USDC Collateral: El colateral de dinero que dara el cliente como "seguro" al prestamo.
-- USDC Contract: el balance de USDC que tiene el contrato en este momento.
-- Contract Control: Con el boton de completar, podremos recuperar nuestra inversion una vez el contrato tenga el equivalente al dinero prestado + el interes.
+- USDC Amount: The amount in USDC that the user requested at the beginning.
+- USDC Collateral: The collateral of money that the client will give as "insurance" to the loan.
+- USDC Contract: the USDC balance that the contract currently has.
+- Contract Control: With the complete button, we will be able to recover our investment once the contract has the equivalent of the money lent + the interest.
 
 ## Rejected Contracts:
 
-Para los contratos que parecian ser un riesgo muy grande, el owner puede simplemente rechazarlos y dejaros como historico.
+For contracts that seemed too risky, the owner can simply reject them and leave you as historical.
 
 <img src="https://i.ibb.co/9NDfS6W/image.png">
 
 ## Completed Contracts:
 
-Por ultimo el owner puede ver los contratos que ya estan completos y cual fue la ganancia de relizar ese prestamo.
+Finally, the owner can see the contracts that are already complete and what was the profit of making that loan.
 
 <img src="https://i.ibb.co/WxtvJNM/image.png">
 
@@ -137,17 +145,17 @@ All the deployment of our application, CI/CD cycle and above all the hosting, is
 
 ## Deployment:
 
-El despliegue de nuestra aplicacion se realizo con su sistema de build and deploy, con el Framework de ReactJS en la version NodeV16. La ventaja de usar este sistema es que cada vez que realizamos un push a nuestro repositorio, la plataforma despliega los cambios al instante.
+The deployment of our application was done with its build and deploy system, with the ReactJS Framework in the NodeV16 version. The advantage of using this system is that every time we push to our repository, the platform deploys the changes instantly.
 
 <img src="https://i.ibb.co/H7HG7GN/image.png">
 
 ## Hosting: 
 
-Una parte importante de nuestro proyecto era tener nuestra propio dominio, asi que se realizo la compra de un dominio en godaddy y se configuro en nuestra aplicacion para configurar los DNS hacia ella.
+An important part of our project was to have our own domain, so we bought a domain from godaddy and configured it in our application to configure the DNS towards it.
 
 <img src="https://i.ibb.co/H4fGRgr/image.png">
 
-A su vez la aplicacion para subir archivos mediante Lighthouse esta tambien hosteada como subdominio de esta pagina.
+In turn, the application to upload files through Lighthouse is also hosted as a subdomain of this page.
 
 <img src="https://i.ibb.co/sWc28j1/image.png">
 
@@ -163,7 +171,7 @@ URL: https://light.smb-lending.services/
 
 <img src="https://i.ibb.co/7Nybv8v/Screenshot-20230205-023410.png" width="30%">
 
-Esta implementacion esta en el siguiente archivo de la pagina web.
+This implementation is in the following file on the web page.
 
 - [Upload Files](/Upload%20File%20Platform%20Code/src/lighthouse/lighthouse.js)
 
@@ -192,9 +200,9 @@ Esta implementacion esta en el siguiente archivo de la pagina web.
 
 ## Webapp:
 
-Estos archivos pueden ser concultados tambien por la pagina web usando el Gateway proporcionado por Lighthouse.
+These files can also be accessed by the website using the Gateway provided by Lighthouse.
 
-Esta implementacion esta en el siguiente archivo de la pagina web.
+This implementation is in the following file on the web page.
 
 - [Active Tab](Lending%20Platform%20Code/src/menu/active.js)
 - [Pending Tab](Lending%20Platform%20Code/src/menu/pending.js)
@@ -210,9 +218,7 @@ Esta implementacion esta en el siguiente archivo de la pagina web.
           return links
       }
 
-# Current state and what's next:
 
-TO DO...
 
 # Team:
 
